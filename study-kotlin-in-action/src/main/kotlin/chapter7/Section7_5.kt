@@ -146,6 +146,11 @@ class Person8 {
     val name: String by _attributes
 }
 
+open class IdTable()
+open class Entity(val id: EntityID)
+data class EntityID(val value: Int)
+
+
 object Users: IdTable() {
     val name = varchar("name", length = 50).index()
     val age = integer("age")
